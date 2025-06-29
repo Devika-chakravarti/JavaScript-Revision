@@ -1,0 +1,60 @@
+<!--
+    DOM: Document Object Model
+    Below drawn is Document Object Model for below written code.
+    (refer to the diagram then, if not understood by the below flow diagram)
+
+    Document Object Model manipulation, refers to the process of dynamically changing the content,
+    structure, or style of a web page using JavaScript.
+    It involves using the DOM API to interact with the HTML elements that make up a webpage and modify
+    them in real-time. This allows developers to create interactive and dynamic web experiences. 
+
+                                       -> meta -> attribute
+    Window -> Document -> HTML -> head -> title -> text node
+                               -> body -> div -> attribute
+                                              -> h1 -> attribute and text node
+                                              -> p -> text node
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM learning</title>
+    <style>
+        .bg-black{
+            background-color: #212121;
+            color: #fff;
+        }
+    </style>
+</head>
+<body class="bg-black">
+    <div>
+        <h1 id="title" class=""heading>DOM learning <span style="display: none;">Test text</span></h1>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <h2>Lorem ipsum dolor sit.</h2>
+        <p>Lorem ipsum dolor sit amet.</p>
+        <input type="password" name="" id="">
+        <ul>
+            <li class="list-item">One</li>
+            <li class="list-item">Two</li>
+            <li class="list-item">Three</li>
+            <li class="list-item">Four</li>
+        </ul>
+    </div>
+</body>
+</html>
+
+<!--
+    Difference between innerText(actual visible text), innerHTML(whole HTML value/HTML tags like <span> value),
+    innerContent(all texts which are even hidden by using CSS styling)
+
+    All CSS selectors can be used here!!
+    getElementById()
+    getElementByClassName()
+    querySelector()
+    querySelectorAll()
+
+    NodeList() and HTMLCollection() aren't pure array, only forEach is available not map.
+
+-->
