@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM learning: part4</title>
+</head>
+<body style="background-color: #212121; color: hsl(0, 0%, 100%);">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+
+    // Adding values/elements-
+
+    //optimization issue occurs here due to whole tree traversal
+    function addLanguage(langName){
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addLanguage("Pyhton")
+    addLanguage("Java")
+    addLanguage("C++")
+    addLanguage("C#")
+
+    //optimized way: recommended approacha
+    function addOptiLanguage(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+    addOptiLanguage("Golang")
+    addOptiLanguage("Ruby")
+
+    // Editing values/elements-
+    
+    const secondLang = document.querySelector("li:nth-child(2)")
+    // secondLang.innerHTML = "Mojo"
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo"
+    secondLang.replaceWith(newli)   //replaces Python with Mojo
+    const fristLang = document.querySelector("li:first-child")
+    fristLang.outerHTML = '<li>TypeScript</li>'      //replaces JavaScript with TypeScript
+
+    // Removing values/elements-
+
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove();  //Ruby is removed here
+
+</script>
+</html>
